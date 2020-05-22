@@ -1,0 +1,33 @@
+﻿@model Comments
+@{
+    ViewData["Title"] = "CreateComment";
+}
+
+<h1>Create Comment</h1>
+
+<form asp-controller="Home" asp-action="CreatePost" method="POST">
+    <input type="hidden" name="IdPost" value="@ViewBag.IdPost" />
+    <div style="background-color:#BBC5AA">
+        <div class="row d-flex justify-content-center">
+            <div class="form-group pt-3 pl-4 pr-4">
+                <input type="text" class="form-control" name="User_Name" placeholder="User">
+                <span style="color:red;">*</span>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="form-group">
+                <textarea name="Comment" class="form-control" placeholder="Comment" cols="70" rows="5"></textarea>
+                <span style="color: red;">*</span>
+            </div>
+        </div>
+        <div class="row d-flex pb-3" style="margin-right: 230px;">
+            <div class="ml-auto">
+                <input type="submit" class="btn btn-outline-success mr-3" value="Save" />
+                <button title="Cancel" class="btn btn-dark mr-3" (click)="resetForm()">
+                    Reset Form
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+

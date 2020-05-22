@@ -1,0 +1,52 @@
+﻿@model Posts
+@{
+    ViewData["Title"] = Model.Type;
+}
+
+<h1>@Model.Type</h1>
+
+<div class="container">
+    <div class="pb-5">
+        <div class="row">
+            <label>Type:</label>
+            <label>@Model.Type</label>
+        </div>
+        <div class="row">
+            <label>Author:</label>
+            <label>@Model.User_Name</label>
+        </div>
+        <div class="row">
+            <label>Content:</label>
+            <p>@Model.Content </p>
+        </div>
+    </div>
+    <div style="background-color:#BBC5AA;">
+        <div class="pb-4">
+            <h5>Comments</h5>
+        </div>
+        <div class="pb-4">
+            <a class="btn btn-outline-danger" asp-controller="Home" asp-action="CreateComment" asp-route-id="@Model.Id">Comment</a>
+        </div>
+        <div>
+            @if (!Model.Comments.Any())
+            {
+                <h6> There are not comments yet... be the first or write one </h6>
+            }
+            else
+            {
+                @foreach (var comment in Model.Comments)
+                {
+                    <div class="row">
+                        <div class="card col-12">
+                            <div class="card-body">
+                                <h6 class="card-title">@comment.User_Name - @comment.Comment_Date.ToString("dd-MM-yyyy")</h6>
+                                <p class="card-text">@comment.Comment</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+    </div>
+</div>

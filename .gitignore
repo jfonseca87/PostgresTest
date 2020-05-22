@@ -1,0 +1,19 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/PostgresTest
+/DapperRepository/bin/Debug/netstandard2.0
+/DapperRepository/obj
+/PostgresTest.ADOREpository/bin/Debug/netstandard2.0
+/PostgresTest.ADOREpository/obj
+/PostgresTest.Business/bin/Debug/netstandard2.0
+/PostgresTest.Business/obj
+/PostgresTest.Client/bin/Debug/netcoreapp3.1
+/PostgresTest.Client/obj
+/PostgresTest.Domain/bin/Debug/netstandard2.0
+/PostgresTest.Domain/obj
+/PostgresTest.EFCoreRepository/bin/Debug/netstandard2.0
+/PostgresTest.EFCoreRepository/obj
+/PostgresTest.Repository/bin/Debug
+/PostgresTest.Repository/obj

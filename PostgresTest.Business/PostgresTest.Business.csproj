@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PostgresTest.Domain\PostgresTest.Domain.csproj" />
+    <ProjectReference Include="..\PostgresTest.Repository\PostgresTest.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

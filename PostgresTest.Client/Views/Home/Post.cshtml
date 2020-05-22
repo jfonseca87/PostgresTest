@@ -1,0 +1,45 @@
+﻿@model ICollection<Posts>
+@{
+    ViewData["Title"] = "Post";
+}
+
+<div class="container">
+    <h1>Post</h1>
+
+    <div>
+        <div class="py-2">
+            <a asp-controller="Home" asp-action="Maintenance" class="btn btn-outline-primary"> Create Post </a>
+        </div>
+        <table class="table table-bordered table-dark table-hover">
+            <thead>
+                <tr>
+                    <th> Id </th>
+                    <th> Author </th>
+                    <th> Type </th>
+                    <th> Publish Date </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td> @item.Id </td>
+                        <td> @item.User_Name </td>
+                        <td> @item.Type </td>
+                        <td> @item.Publish_Date.ToString("dd-MM-yyyy") </td>
+                        <td>
+                            <a class="btn btn-outline-warning" asp-controller="Home" asp-action="Maintenance" asp-route-id="@item.Id"> Update </a> ||
+                            <a class="btn btn-outline-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@item.Id"> Delete </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+

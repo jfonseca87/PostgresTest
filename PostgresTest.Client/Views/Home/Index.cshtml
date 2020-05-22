@@ -1,0 +1,25 @@
+﻿@model ICollection<Posts>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <div class="jumbotron text-center">
+        <h1>
+            Jorge's Blog
+        </h1>
+    </div>
+
+    <div class="row">
+        @foreach (var post in Model)
+        {
+            <div class="card col-4 p-5">
+                <div class="card-body">
+                    <h5 class="card-title">@post.Type</h5>
+                    <p class="card-text">@post.Content</p>
+                    <a asp-controller="Home" asp-action="ReadPost" asp-route-id="@post.Id" class="card-link">More...</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
